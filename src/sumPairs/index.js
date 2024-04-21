@@ -52,3 +52,30 @@ for(let i=0;i<A.length;i++){
 
 
 module.exports = sumPairs;
+
+
+/***The soltion below is a better more efficient solution
+ * the above solution has efficent of O(n^2)
+ * the one below  has an efficney of O(n)
+function sumPairs(A, N) {
+  const numbers = new Map();
+  const solution = new Map();
+  for (let e of A) {
+    numbers.set(e, e);
+  }
+  for (let e of A) {
+    let diff = N - e;
+    if (diff !== e) {
+      if (numbers.has(diff)) {
+        solution.set(Math.min(e, diff), Math.max(e, diff));
+      }
+    }
+  }
+
+  return Array.from(solution);
+}
+
+module.exports = sumPairs;
+
+
+*/
